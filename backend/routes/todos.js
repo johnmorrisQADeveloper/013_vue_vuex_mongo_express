@@ -36,6 +36,18 @@ router.get('/:todoId', async (req, res) => {
     res.json(error)
   }
 })
+
+// get n number of Todo
+router.get('/count/:number', async (req, res) => {
+  console.log(req.params.number)
+  try {
+    const todo = await Todo.find().limit(Number(req.params.number))
+    res.json(todo)
+  } catch (error) {
+    res.json(error)
+  }
+})
+
 // delete a specific Todo
 router.delete('/:todoId', async (req, res) => {
   console.log(req.params.todoId)
