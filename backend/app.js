@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 const videosRoute = require('./routes/todos')
-app.use('/videos', videosRoute)
+app.use('/todos', videosRoute)
 
 const db = 'mongodb+srv://john:john@cluster0-lom0m.mongodb.net/todos'
 mongoose.connect(db, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
