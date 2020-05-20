@@ -19,12 +19,17 @@ const actions = {
       title, completed: false
     })
     commit('NEW_TODO', response.data)
+  },
+  async deleteTodo ({ commit }, _id) {
+    await axios.delete(`http://localhost:3000/todos/${_id}`)
+    commit('REMOVE_TODO', _id)
   }
 }
 
 const mutations = {
   SET_TODOS: (state, todos) => (state.todos = todos),
-  NEW_TODO: (state, todo) => state.todos.unshift(todo)
+  NEW_TODO: (state, todo) => state.todos.unshift(todo),
+  REMOVE_TODO: (state, _id) => (state.todos = state.todos.filter(todo => todo._id !== _id))
 }
 
 export default {
