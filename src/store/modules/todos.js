@@ -11,11 +11,11 @@ const getters = {
 
 const actions = {
   async fetchTodos ({ commit }) {
-    const response = await axios.get('https://jsonplaceholder.typicode.com/todos')
+    const response = await axios.get('http://localhost:3000/todos')
     commit('SET_TODOS', response.data)
   },
   async addTodo ({ commit }, title) {
-    const response = await axios.post('https://jsonplaceholder.typicode.com/todos', {
+    const response = await axios.post('http://localhost:3000/todos', {
       title, completed: false
     })
     commit('NEW_TODO', response.data)
