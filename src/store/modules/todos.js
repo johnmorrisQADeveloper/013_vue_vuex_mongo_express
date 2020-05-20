@@ -5,18 +5,26 @@ const state = {
 }
 
 const getters = {
-  allTodos: (state) => state.todos
+  allTodos: (state) => state.todos,
+  getIndex: (state) => state.todos.length
 }
 
 const actions = {
   async fetchTodos ({ commit }) {
     const response = await axios.get('https://jsonplaceholder.typicode.com/todos')
     commit('SET_TODOS', response.data)
+  },
+  async addTodo ({ commit }, title) {
+    const response = await axios.post('https://jsonplaceholder.typicode.com/todos', {
+      title, completed: false
+    })
+    commit('NEW_TODO', response.data)
   }
 }
 
 const mutations = {
-  SET_TODOS: (state, todos) => (state.todos = todos)
+  SET_TODOS: (state, todos) => (state.todos = todos),
+  NEW_TODO: (state, todo) => state.todos.unshift(todo)
 }
 
 export default {
