@@ -29,12 +29,10 @@ const actions = {
     commit('SET_TODOS', response.data)
   },
   async updateTodo ({ commit }, updateTodo) {
-    console.log(updateTodo)
-    console.log(`http://localhost:3000/todos/${updateTodo._id}`)
     const response = await axios.patch(`http://localhost:3000/todos/${updateTodo._id}`, updateTodo)
     commit('UPDATE_TODOS', response.data)
-    // const responses = await axios.get('http://localhost:3000/todos')
-    // commit('SET_TODOS', response.data)
+    const responses = await axios.get('http://localhost:3000/todos')
+    commit('SET_TODOS', responses.data)
   }
 }
 
@@ -43,7 +41,9 @@ const mutations = {
   NEW_TODO: (state, todo) => state.todos.unshift(todo),
   REMOVE_TODO: (state, _id) => (state.todos = state.todos.filter(todo => todo._id !== _id)),
   UPDATE_TODOS: (state, updateTodo) => {
+    console.log(updateTodo)
     const index = state.todos.findIndex(todo => todo._id === updateTodo._id)
+    console.log(index)
     if (index !== -1) {
       state.todos.splice(index, 1, updateTodo)
     }

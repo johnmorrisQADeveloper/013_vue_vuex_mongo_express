@@ -30,16 +30,11 @@ export default {
   methods: {
     ...mapActions(['fetchTodos', 'deleteTodo', 'updateTodo']),
     onDblClick (todo) {
-      let status = Boolean(todo.completed)
-      if (status) {
-        status = false
-      } else {
-        status = true
-      }
+      const status = Boolean(todo.completed)
       const updatedTodo = {
         _id: todo._id,
         title: todo.title,
-        completed: status
+        completed: !status
       }
       this.updateTodo(updatedTodo)
     }
