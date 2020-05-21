@@ -61,11 +61,11 @@ router.delete('/:todoId', async (req, res) => {
 
 // update a record
 router.patch('/:todoId', async (req, res) => {
-  console.log(req.params.TodoId)
+  console.log(req.params.todoId)
   try {
-    const { title, completed } = req.body
-    const vidoes = await Todo.updateOne({ _id: req.params.TodoId },
-      { $set: { title, completed } })
+    const { completed } = req.body
+    const vidoes = await Todo.updateOne({ _id: req.params.todoId },
+      { $set: { completed } })
     res.json(vidoes)
   } catch (error) {
     res.json(error)

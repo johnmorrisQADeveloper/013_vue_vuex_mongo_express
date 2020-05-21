@@ -16,8 +16,6 @@ export default {
   methods: {
     ...mapActions(['filterTodo']),
     selectDrop (e) {
-      console.log(e)
-      console.log(e.target.options[e.target.options.selectedIndex].value)
       this.filterTodo(e.target.options[e.target.options.selectedIndex].value)
     }
   }
