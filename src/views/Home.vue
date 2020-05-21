@@ -70,90 +70,88 @@
           <v-icon small class="mr-2" @click="editItem(item)">mdi-pencil</v-icon>
           <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
         </template>
-        <template v-slot:no-data>
-          <v-btn color="primary" @click="fetchTodos">Reset</v-btn>
-        </template>
       </v-data-table>
     </v-card>
   </v-app>
 </template>
 <script>
-import { mapActions, mapGetters } from "vuex";
+import { mapActions, mapGetters } from 'vuex'
 export default {
   methods: {
-    ...mapActions(["fetchTodos", "addTodo", "deleteTodo", "updateTodo"]),
-    getColor(completed) {
-      if (completed) return "red";
-      else return "green";
+    ...mapActions(['fetchTodos', 'addTodo', 'deleteTodo', 'updateTodo']),
+    getColor (completed) {
+      if (completed) return 'red'
+      else return 'green'
     },
-    editItem(todo) {
-      this.editedIndex = this.todos.indexOf(item);
-      this.editedItem = Object.assign({}, item);
-      const status = Boolean(todo.completed);
-      const updatedTodo = {
-        _id: todo._id,
-        title: todo.title,
-        completed: !status
-      };
-      this.updateTodo(updatedTodo);
-      this.dialog = true;
+    editItem (todo, action) {
+      this.editedIndex = this.todos.indexOf(todo)
+      console.log(this.editedIndex)
+      this.editedItem = Object.assign({}, todo)
+      this.dialog = true
+      // const status = Boolean(todo.completed)
+      // const updatedTodo = {
+      //   _id: todo._id,
+      //   title: todo.title,
+      //   completed: status
+      // }
+      // this.updateTodo(this.editedItem)
     },
-    deleteItem(item) {
-      confirm("Are you sure you want to delete this item?") &&
-        this.deleteTodo(item._id);
+    deleteItem (item) {
+      confirm('Are you sure you want to delete this item?') &&
+        this.deleteTodo(item._id)
     },
-    close() {
-      this.dialog = false;
+    close () {
+      this.dialog = false
       this.$nextTick(() => {
-        this.editedItem = Object.assign({}, this.defaultItem);
-        this.editedIndex = -1;
-      });
+        this.editedItem = Object.assign({}, this.defaultItem)
+        this.editedIndex = -1
+      })
     },
 
-    save() {
+    save () {
       if (this.editedIndex > -1) {
-        Object.assign(this.todos[this.editedIndex], this.editedItem);
+        Object.assign(this.todos[this.editedIndex], this.editedItem)
       } else {
-        // this.todos.push(this.editedItem).this.addTodo(this.title)
-        this.addTodo(this.editedItem.title);
+        this.addTodo(this.editedItem.title)
       }
-      this.close();
+      this.editedItem = ''
+      this.close()
     }
   },
-  data() {
+  data () {
     return {
       dialog: false,
       editedIndex: -1,
       editedItem: {
-        title: "",
-        completed: ""
+        title: '',
+        completed: ''
       },
       defaultItem: {
-        title: "",
+        title: '',
         completed: false
       },
       expanded: [],
       singleExpand: false,
-      search: "",
+      search: '',
       todos: [],
       headers: [
-        { text: "Title", value: "title" },
-        { text: "Completed", value: "completed" },
-        { text: "Actions", value: "actions", sortable: false }
+        { text: 'Title', value: 'title' },
+        { text: 'Completed', value: 'completed' },
+        { text: 'Actions', value: 'actions', sortable: false }
       ]
-    };
-  },
-  name: "Home",
-  components: {},
-  computed: {
-    ...mapGetters(["allTodos"]),
-    formTitle() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
     }
   },
-  async created() {
-    await this.fetchTodos();
-    this.loading = false;
+  name: 'Home',
+  components: {},
+  computed: {
+    ...mapGetters(['allTodos']),
+    formTitle () {
+      return this.editedIndex === -1 ? 'New Item' : 'Edit Item'
+    }
+  },
+  async created () {
+    await this.fetchTodos()
+    this.loading = false
   }
-};
+}
 </script>
