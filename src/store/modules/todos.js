@@ -33,8 +33,8 @@ const actions = {
     console.log(`http://localhost:3000/todos/${updateTodo._id}`)
     const response = await axios.patch(`http://localhost:3000/todos/${updateTodo._id}`, updateTodo)
     commit('UPDATE_TODOS', response.data)
-    const responses = await axios.get('http://localhost:3000/todos')
-    commit('SET_TODOS', responses.data)
+    // const responses = await axios.get('http://localhost:3000/todos')
+    // commit('SET_TODOS', response.data)
   }
 }
 

@@ -10,7 +10,13 @@
       </span>
     </div>
     <div class="todos">
-      <div @click="onDblClick(todo)" class="todo" :class="{'is-complete': todo.completed}" v-for="todo in allTodos" :key="todo.id">
+      <div
+        @click="onDblClick(todo)"
+        class="todo"
+        :class="{'is-complete': todo.completed}"
+        v-for="todo in allTodos"
+        :key="todo.id"
+      >
         {{ todo.title}}
         <font-awesome-icon @click="deleteTodo(todo._id)" class="i" icon="trash" />
       </div>
