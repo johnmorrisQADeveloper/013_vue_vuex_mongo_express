@@ -19,7 +19,25 @@
         :items-per-page="5"
         class="elevation-1"
         :search="search"
-      ></v-data-table>
+        :expanded.sync="expanded"
+        item-key="title"
+        show-expand
+      >
+        <template v-slot:item.completed="{ item }">
+          <v-chip :color="getColor(item.completed)" dark>{{ item.completed }}</v-chip>
+        </template>
+
+        <template v-slot:top>
+          <v-toolbar flat>
+            <v-toolbar-title>Expandable Table</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-switch v-model="singleExpand" label="Single expand" class="mt-2"></v-switch>
+          </v-toolbar>
+        </template>
+        <template v-slot:expanded-item="{ headers, item }">
+          <td :colspan="headers.length"><p>Title: {{ item.title }}</p> <p>ID: {{item._id}}</p>  </td>
+        </template>
+      </v-data-table>
     </v-card>
   </v-app>
 </template>
@@ -27,10 +45,16 @@
 import { mapActions, mapGetters } from 'vuex'
 export default {
   methods: {
-    ...mapActions(['fetchTodos'])
+    ...mapActions(['fetchTodos']),
+    getColor (completed) {
+      if (completed) return 'red'
+      else return 'green'
+    }
   },
   data () {
     return {
+      expanded: [],
+      singleExpand: false,
       search: '',
       todos: [
         // {
