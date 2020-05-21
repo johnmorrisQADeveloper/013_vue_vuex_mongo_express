@@ -1,11 +1,15 @@
 <template>
-  <div id="app">
-    <div id="container">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/todoapp">TodoApp</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-content>
+      <div id="app">
+        <div id="container">
+          <router-link to="/">Home</router-link>|
+          <router-link to="/todoapp">TodoApp</router-link>
+        </div>
+        <router-view />
+      </div>
+    </v-content>
+  </v-app>
 </template>
 
 <style>
