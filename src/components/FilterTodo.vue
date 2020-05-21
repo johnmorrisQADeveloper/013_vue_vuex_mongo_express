@@ -1,19 +1,27 @@
 <template>
   <div>
     Filter Todos:
-    <select name id>
-      <option value="200">200</option>
-      <option value="100">100</option>
-      <option value="50">50</option>
-      <option value="20">20</option>
-      <option value="10">10</option>
+    <select @change="selectDrop">
+      <option value="7">7</option>
       <option value="5">5</option>
+      <option value="3">3</option>
+      <option value="2">2</option>
     </select>
   </div>
 </template>
 
 <script>
-export default {}
+import { mapActions } from 'vuex'
+export default {
+  methods: {
+    ...mapActions(['filterTodo']),
+    selectDrop (e) {
+      console.log(e)
+      console.log(e.target.options[e.target.options.selectedIndex].value)
+      this.filterTodo(e.target.options[e.target.options.selectedIndex].value)
+    }
+  }
+}
 </script>
 
 <style scoped>
