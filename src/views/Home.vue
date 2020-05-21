@@ -71,7 +71,7 @@
           <v-icon small @click="deleteItem(item)">mdi-delete</v-icon>
         </template>
         <template v-slot:no-data>
-          <v-btn color="primary" @click="initialize">Reset</v-btn>
+          <v-btn color="primary" @click="fetchTodos">Reset</v-btn>
         </template>
       </v-data-table>
     </v-card>
@@ -81,10 +81,13 @@
 import { mapActions, mapGetters } from 'vuex'
 export default {
   methods: {
-    ...mapActions(['fetchTodos']),
+    ...mapActions(['fetchTodos', 'addTodo', 'deleteTodo']),
     getColor (completed) {
       if (completed) return 'red'
       else return 'green'
+    },
+    deleteItem (item) {
+      confirm('Are you sure you want to delete this item?') && this.deleteTodo(item._id)
     },
     close () {
       this.dialog = false
@@ -98,7 +101,8 @@ export default {
       if (this.editedIndex > -1) {
         Object.assign(this.todos[this.editedIndex], this.editedItem)
       } else {
-        this.todos.push(this.editedItem)
+        // this.todos.push(this.editedItem).this.addTodo(this.title)
+        this.addTodo(this.editedItem.title)
       }
       this.close()
     }
