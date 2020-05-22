@@ -29,7 +29,8 @@ const actions = {
     commit('SET_TODOS', response.data)
   },
   async updateTodo ({ commit }, updateTodo) {
-    const response = await axios.patch(`http://localhost:3000/todos/${updateTodo._id}`, updateTodo)
+    console.log(JSON.stringify(updateTodo))
+    const response = await axios.patch(`http://localhost:3000/todos/${updateTodo._id}`, { ...updateTodo })
     commit('UPDATE_TODOS', response.data)
     const responses = await axios.get('http://localhost:3000/todos')
     commit('SET_TODOS', responses.data)

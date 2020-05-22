@@ -81,17 +81,8 @@ export default {
     },
     editItem (todo, action) {
       this.editedIndex = this.allTodos.indexOf(todo)
-      console.log(this.editedIndex)
       this.editedItem = Object.assign({}, todo)
-      console.log(this.formTitle)
       this.dialog = true
-      const status = Boolean(todo.completed)
-      const updatedTodo = {
-        _id: todo._id,
-        title: todo.title,
-        completed: status
-      }
-      this.updateTodo(updatedTodo)
     },
     deleteItem (item) {
       confirm('Are you sure you want to delete this item?') &&
@@ -105,13 +96,14 @@ export default {
       })
     },
 
-    save () {
+    async save () {
       if (this.editedIndex > -1) {
-        Object.assign(this.todos[this.editedIndex], this.editedItem)
+        Object.assign(this.allTodos[this.editedIndex], this.editedItem)
+        await this.updateTodo(this.editedItem)
       } else {
-        this.addTodo(this.editedItem.title)
+        await this.addTodo(this.editedItem.title)
       }
-      this.editedItem = ''
+      // this.updateTodo(this.editedItem)
       this.close()
     }
   },
