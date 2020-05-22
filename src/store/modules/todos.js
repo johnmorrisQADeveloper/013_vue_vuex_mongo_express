@@ -41,13 +41,10 @@ const mutations = {
   NEW_TODO: (state, todo) => state.todos.unshift(todo),
   REMOVE_TODO: (state, _id) => (state.todos = state.todos.filter(todo => todo._id !== _id)),
   UPDATE_TODOS: (state, updateTodo) => {
-    console.log(updateTodo)
     const index = state.todos.findIndex(todo => todo._id === updateTodo._id)
-    console.log(index)
     if (index !== -1) {
       state.todos.splice(index, 1, updateTodo)
     }
-    console.log(state.todos)
   }
 }
 

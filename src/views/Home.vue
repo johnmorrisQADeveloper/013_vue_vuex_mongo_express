@@ -1,17 +1,14 @@
 <template>
   <v-app id="inspire">
     <v-card>
-      <v-card-title>
-        Todos
-        <v-spacer></v-spacer>
-        <v-text-field
-          v-model="search"
-          append-icon="mdi-magnify"
-          label="Search"
-          single-line
-          hide-details
-        ></v-text-field>
-      </v-card-title>
+      <v-spacer></v-spacer>
+      <v-text-field
+        v-model="search"
+        append-icon="mdi-magnify"
+        label="Search"
+        single-line
+        hide-details
+      ></v-text-field>
       <v-data-table
         dense
         :headers="headers"
@@ -40,7 +37,6 @@
                 <v-card-title>
                   <span class="headline">{{ formTitle }}</span>
                 </v-card-title>
-
                 <v-card-text>
                   <v-container>
                     <v-row>
@@ -84,17 +80,18 @@ export default {
       else return 'green'
     },
     editItem (todo, action) {
-      this.editedIndex = this.todos.indexOf(todo)
+      this.editedIndex = this.allTodos.indexOf(todo)
       console.log(this.editedIndex)
       this.editedItem = Object.assign({}, todo)
+      console.log(this.formTitle)
       this.dialog = true
-      // const status = Boolean(todo.completed)
-      // const updatedTodo = {
-      //   _id: todo._id,
-      //   title: todo.title,
-      //   completed: status
-      // }
-      // this.updateTodo(this.editedItem)
+      const status = Boolean(todo.completed)
+      const updatedTodo = {
+        _id: todo._id,
+        title: todo.title,
+        completed: status
+      }
+      this.updateTodo(updatedTodo)
     },
     deleteItem (item) {
       confirm('Are you sure you want to delete this item?') &&
