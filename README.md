@@ -1,4 +1,7 @@
 # todovuex
+![Image description](src/assets/archvuexmongoexpress.png)
+
+
 
 ## Project setup
 ```
