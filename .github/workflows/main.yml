@@ -7,18 +7,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Backend
-        uses: cypress-io/github-action@v2
         run: |
           cd backend
           npm i
           npm run start
       - name: client
-        uses: cypress-io/github-action@v2
         run: |
           npm i
-        with:
-         start: npm run serve
-         wait-on: 'http://localhost:8080/'
- 
+          npm run serve
+         
       - name: Cypress run
         uses: cypress-io/github-action@v2
