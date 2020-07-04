@@ -2,6 +2,9 @@
   "name": "todovuex",
   "version": "0.1.0",
   "private": true,
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
