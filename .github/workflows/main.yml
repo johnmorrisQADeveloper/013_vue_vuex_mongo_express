@@ -1,0 +1,20 @@
+name: main
+on: [push]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Backend
+        uses: cypress-io/github-action@v2
+        with:
+          start: "cd backend && npm i && npm run start"  
+      - name: client
+        uses: cypress-io/github-action@v2
+        with:
+         start: "npm i && npm run serve"
+         wait-on: 'http://localhost:8080/'
+ 
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
