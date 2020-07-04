@@ -1,8 +1,9 @@
 /// <reference types="Cypress" />
-import { Given, Then } from 'cypress-cucumber-preprocessor/steps';
-import HomePage from '../Pages/homePage'
-const homePage = new HomePage()
 
+import { Given, Then } from 'cypress-cucumber-preprocessor/steps';
+import HomePage from '../Pages/homePage';
+
+const homePage = new HomePage()
 Given('I open todo app', () => {
   homePage.navigate('/')
 })
