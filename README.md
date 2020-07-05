@@ -17,7 +17,8 @@ npm run serve
 ## start docker 
 ```
 docker-compose up -d --build
-http://localhost:8081/
+http://localhost:8080/
+http://localhost:3000/todos
 ```
 
 ## stop docker
