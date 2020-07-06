@@ -8,8 +8,4 @@ jobs:
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: Cypress run
-        run: |
-              echo $PWD
-              cd $PWD
-              ls
-              npx cypress run
+        uses: sudo cypress-io/github-action@v2
