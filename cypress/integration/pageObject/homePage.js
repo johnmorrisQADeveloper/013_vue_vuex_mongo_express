@@ -12,7 +12,7 @@ module.exports.homePage = {
     return cy.get('.headline')
   },
   inputBox() {
-    return cy.get('#input-55', {timeout: 10000})
+    return cy.get('.inputTodo', {timeout: 10000})
   },
   saveButton() {
     return cy.get('button:nth-child(3) > span')

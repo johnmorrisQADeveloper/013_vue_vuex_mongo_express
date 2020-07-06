@@ -41,7 +41,7 @@
                   <v-container>
                     <v-row>
                       <v-col cols="12" sm="4" md="12">
-                        <v-text-field v-model="editedItem.title" label="Title"></v-text-field>
+                        <v-text-field class="inputTodo" v-model="editedItem.title" label="Title"></v-text-field>
                       </v-col>
                     </v-row>
                   </v-container>
