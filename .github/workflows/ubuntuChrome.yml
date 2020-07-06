@@ -10,5 +10,7 @@ jobs:
       - name: Cypress run
         run: |
           npx cypress run --browser chrome
+      - name: ZAP Scan
+        run: docker run -t owasp/zap2docker-weekly zap-baseline.py -t http://localhost:8080/
       - name: Stop dockers
-        run: docker-compose stop          
+        run: docker-compose stop
