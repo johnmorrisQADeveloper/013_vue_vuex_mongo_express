@@ -3,7 +3,9 @@
 
 ![Image description](src/assets/archvuexmongoexpress.png)
 
- [![ubuntuChrome status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/ubuntuChrome/badge.svg?branch=master)](.github/workflows/ubuntuChrome.yml)  [![macChrome status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/macChrome/badge.svg?branch=master)](.github/workflows/macChrome.yml) 
+
+
+ [![ubuntuChrome status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/ubuntuChrome/badge.svg?branch=master)](.github/workflows/ubuntuChrome.yml)  [![macChrome status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/zap/badge.svg?branch=master)](.github/workflows/zap.yml) 
 
 
 ## Start REST API
