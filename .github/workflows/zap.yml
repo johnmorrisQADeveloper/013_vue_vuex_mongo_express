@@ -10,7 +10,7 @@ jobs:
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: ZAP Scan
-        uses: zaproxy/action-full-scan@v0.1.0
+        uses: zaproxy/action-baseline@v0.3.0
         with:
           docker_name: 'owasp/zap2docker-stable'
           target: 'http://localhost:8080/'
