@@ -5,6 +5,8 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
+      - name: Docker version
+        run: docker --version        
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: Cypress run
