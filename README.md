@@ -33,3 +33,8 @@ docker system prune
 docker system prune -a
 
 ```
+
+## cypress intellisense
+```
+/// <reference types="Cypress" />
+```

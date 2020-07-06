@@ -1,6 +1,14 @@
+/// <reference types="Cypress" />
+
 import {homePage} from './pageObject/homePage'
-describe('todo ', () => {
-  it('testing', () => {
+describe('Todo Homepage ', () => {
+  it('title home page is todovuex', () => {
     homePage.navigate()
+    homePage.title().should('be', 'todovuex')
+  })
+  it('add new item', () => {
+    homePage.newItemButton().click()
+    homePage.inputBox().type('hello')
+    homePage.saveButton().click()
   })
 })
