@@ -5,14 +5,10 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-        
-      - name: Install brew
-        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-      - name: Install docker toolbox
-        run: brew cask install docker-toolbox
-
-      - name: create the docker machine
-        run: docker-machine create
+      - name: echo
+        run: |
+          brew install docker-machine docker
+          sudo docker –version
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: Cypress run
