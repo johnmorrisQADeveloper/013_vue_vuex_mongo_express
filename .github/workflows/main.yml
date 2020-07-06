@@ -8,7 +8,7 @@ jobs:
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: Cypress run
-        - run: |
+        run: |
           cd $PWD
           npm i
           npx cypress run
