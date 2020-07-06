@@ -5,10 +5,13 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
-      - name: echo
+      - name: install docker
         run: |
           brew install docker-machine docker
           brew services start docker-machine
+      - name: docker compose
+        run: |
+          sudo pip install docker-compose
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: Cypress run
