@@ -8,6 +8,9 @@ module.exports.homePage = {
   newItemButton() {
     return cy.get('.mb-2 > .v-btn__content')
   },
+  dialogTitle() {
+    return cy.get('.headline')
+  },
   inputBox() {
     return cy.get('#input-55', {timeout: 10000})
   },

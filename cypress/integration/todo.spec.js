@@ -8,6 +8,7 @@ describe('Todo Homepage ', () => {
   })
   it('add new item', () => {
     homePage.newItemButton().click()
+    homePage.dialogTitle().should('be', 'New Item')
     homePage.inputBox().type('hello')
     homePage.saveButton().click()
   })
