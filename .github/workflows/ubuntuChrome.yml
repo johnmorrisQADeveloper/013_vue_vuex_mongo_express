@@ -13,6 +13,7 @@ jobs:
           
   zap_scan:
     runs-on: ubuntu-latest
+    needs: [cypress-run]
     name: Scan the webapplication
     steps:
       - name: Checkout
