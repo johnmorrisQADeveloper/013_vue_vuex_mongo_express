@@ -10,3 +10,5 @@ jobs:
       - name: Cypress run
         run: |
           npx cypress run --browser chrome
+      - name: Stop dockers
+        run: docker-compose stop          
