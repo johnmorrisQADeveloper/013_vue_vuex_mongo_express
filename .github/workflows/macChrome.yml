@@ -8,7 +8,7 @@ jobs:
       - name: echo
         run: |
           brew install docker-machine docker
-          docker-machine start
+          brew services start docker-machine
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: Cypress run
