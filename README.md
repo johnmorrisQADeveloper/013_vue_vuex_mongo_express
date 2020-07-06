@@ -37,3 +37,9 @@ docker system prune -a
 ```
 /// <reference types="Cypress" />
 ```
+
+## update dependecies
+```
+npx npm-check-updates -u
+npm update
+```
