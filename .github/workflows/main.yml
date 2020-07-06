@@ -9,6 +9,5 @@ jobs:
         run: docker-compose up -d --build
       - name: Cypress run
         - run: |
-          cd $PWD
           npm i
           npx cypress run
