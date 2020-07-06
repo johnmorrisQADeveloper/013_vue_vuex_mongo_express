@@ -1,7 +1,12 @@
-# todovuex [![Build Status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/main/badge.svg?branch=master)](.github/workflows/main.yml)
+# TodoApp Build Status - [![Build Status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/main/badge.svg)](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/actions)
+
+
 ![Image description](src/assets/archvuexmongoexpress.png)
 
-## Start RESR API
+ [![ubuntuChrome status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/ubuntuChrome/badge.svg?branch=master)](.github/workflows/ubuntuChrome.yml)  [![macChrome status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/macChrome/badge.svg?branch=master)](.github/workflows/macChrome.yml) 
+
+
+## Start REST API
 ```
 cd backend
 npm i

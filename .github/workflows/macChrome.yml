@@ -1,8 +1,8 @@
-name: main
+name: macChrome
 on: push
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v1
       - name: Build the docker-compose stack
