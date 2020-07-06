@@ -9,6 +9,7 @@ jobs:
         run: |
           brew install docker-machine docker
           sudo docker –version
+          docker-machine start
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: Cypress run
