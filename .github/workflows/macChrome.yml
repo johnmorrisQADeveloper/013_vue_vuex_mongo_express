@@ -13,9 +13,6 @@ jobs:
 
       - name: create the docker machine
         run: docker-machine create --driver "virtualbox" myBoxName
-      - name: start the docker machine
-        run: docker-machine start myBoxName
-
       - name: docker commands
         run: eval "$(docker-machine env myBoxName)"
       - name: Build the docker-compose stack
