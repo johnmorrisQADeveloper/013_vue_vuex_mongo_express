@@ -1,7 +1,6 @@
 # todovuex [![Build Status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/main/badge.svg?branch=master)](.github/workflows/main.yml)
 ![Image description](src/assets/archvuexmongoexpress.png)
 
-
 ## Start RESR API
 ```
 cd backend
