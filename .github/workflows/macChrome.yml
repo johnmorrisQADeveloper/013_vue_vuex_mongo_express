@@ -8,8 +8,6 @@ jobs:
         
       - name: Install brew
         run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-      - name: Install Cask
-        run: brew install caskroom/cask/brew-cask
       - name: Install docker toolbox
         run: brew cask install docker-toolbox
 
