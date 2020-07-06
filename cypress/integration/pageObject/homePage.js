@@ -9,7 +9,7 @@ module.exports.homePage = {
     return cy.get('.mb-2 > .v-btn__content')
   },
   inputBox() {
-    return cy.get('#input-55')
+    return cy.get('#input-55', {timeout: 10000})
   },
   saveButton() {
     return cy.get('button:nth-child(3) > span')
