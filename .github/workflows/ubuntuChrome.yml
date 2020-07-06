@@ -10,9 +10,8 @@ jobs:
       - name: Cypress run
         run: |
           npx cypress run --browser chrome
-
+          
   zap_scan:
-    needs: cypress-run
     runs-on: ubuntu-latest
     name: Scan the webapplication
     steps:
@@ -21,6 +20,9 @@ jobs:
         with:
           ref: master
       - name: ZAP Scan
-        uses: zaproxy/action-baseline@v0.3.0
+        uses: zaproxy/action-full-scan@v0.1.0
         with:
-        target: 'http://localhost:8080/'
+          docker_name: 'owasp/zap2docker-stable'
+          target: 'http://localhost:8080/'
+          rules_file_name: '.zap/rules.tsv'
+          cmd_options: '-a'
