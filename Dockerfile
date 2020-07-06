@@ -14,7 +14,6 @@ RUN npm install -g babel-eslint
 RUN npm install -g @vue/cli-plugin-babel
 RUN npm install -g @vue/cli-plugin-eslint
 RUN npm install -g @vue/cli-plugin-babel/preset
-
 # start app
 CMD ["npm", "run", "serve"]
 
