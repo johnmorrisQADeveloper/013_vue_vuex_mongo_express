@@ -10,11 +10,6 @@ jobs:
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: ZAP Scan
-        uses: zaproxy/action-baseline@v0.3.0
-        with:
-          docker_name: 'owasp/zap2docker-live'
-          target: 'http://localhost:8080/'
-          rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a'
+        run: docker run -t owasp/zap2docker-weekly zap-baseline.py -t http://localhost:8080/
       - name: Stop dockers
         run: docker-compose stop
