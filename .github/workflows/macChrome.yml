@@ -14,7 +14,7 @@ jobs:
       - name: create the docker machine
         run: docker-machine create --driver "virtualbox" myBoxName
       - name: docker commands
-        run: eval "$(docker-machine env myBoxName)"
+        run: docker-machine start default
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: Cypress run
