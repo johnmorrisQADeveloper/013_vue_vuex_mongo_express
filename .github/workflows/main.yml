@@ -8,5 +8,4 @@ jobs:
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: Cypress run
-        working-directory: /home/runner/work/013_vue_vuex_mongo_express/013_vue_vuex_mongo_express
-        run: npx cypress run
+        uses: cypress-io/github-action@v2
