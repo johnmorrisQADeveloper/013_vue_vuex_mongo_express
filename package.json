@@ -2,10 +2,6 @@
   "name": "todovuex",
   "version": "0.1.0",
   "private": true,
-  "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true,
-    "step_definitions": "test/cypress/support/step_definitions"
-  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -31,7 +27,6 @@
     "@vue/cli-service": "~4.3.0",
     "@vue/eslint-config-standard": "^5.1.2",
     "babel-eslint": "^10.1.0",
-    "cypress-cucumber-preprocessor": "^2.5.2",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^11.1.0",

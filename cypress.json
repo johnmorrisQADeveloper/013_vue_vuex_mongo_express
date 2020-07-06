@@ -1,5 +1,4 @@
 {
-  "testFiles": "**/*.feature",
   "rootDir": ".",
   "projectRoot": "."
 }
