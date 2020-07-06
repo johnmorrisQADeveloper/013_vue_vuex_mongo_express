@@ -10,4 +10,5 @@ jobs:
       - name: Cypress run
         run: |
               echo $PWD
+              ls
               npx cypress run
