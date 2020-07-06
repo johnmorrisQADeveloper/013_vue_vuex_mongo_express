@@ -9,4 +9,4 @@ jobs:
         run: docker-compose up -d --build
       - name: Cypress run
         run: |
-          npx cypress run
+          npx cypress run --browser chrome
