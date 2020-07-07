@@ -11,10 +11,9 @@ jobs:
       - name: Build the docker-compose stack
         run: docker-compose up -d --build
       - name: ZAP Scan
-        run: docker run -t owasp/zap2docker-live zap-baseline.py -t http://localhost:8080
-#         uses: zaproxy/action-baseline@v0.3.0
-#         with:
-#           docker_name: 'owasp/zap2docker-weekly'
-#           target: 'http://localhost:8080'
-#           cmd_options: '-d'
-#           token: ${{ secrets.GITHUB_TOKEN }}
+        uses: zaproxy/action-baseline@v0.3.0
+        with:
+          docker_name: 'owasp/zap2docker-weekly'
+          target: 'http://localhost:8080'
+          cmd_options: '-d'
+          token: ${{ secrets.GITHUB_TOKEN }}
