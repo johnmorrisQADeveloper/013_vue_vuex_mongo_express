@@ -13,6 +13,7 @@ jobs:
       - name: ZAP Scan
         uses: zaproxy/action-baseline@v0.3.0
         with:
-          docker_name: 'owasp/zap2docker-live'
+          docker_name: 'owasp/zap2docker-weekly'
           target: 'http://localhost:8080'
           cmd_options: '-d'
+          token: ${{ secrets.GITHUB_TOKEN }}
