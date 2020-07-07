@@ -15,5 +15,5 @@ jobs:
         with:
           docker_name: 'owasp/zap2docker-weekly'
           target: 'http://localhost:8080'
-          cmd_options: '-d'
+          cmd_options: '-t'
           token: ${{ secrets.GITHUB_TOKEN }}
