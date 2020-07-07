@@ -1,4 +1,4 @@
-name: ubuntuChrome
+name: ubuntu
 on: push
 jobs:
   cypress-run:
