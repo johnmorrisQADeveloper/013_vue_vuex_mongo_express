@@ -5,7 +5,7 @@
 
 
 
- [![ubuntuChrome status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/ubuntuChrome/badge.svg)](.github/workflows/ubuntuChrome.yml)  [![zap status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/zap/badge.svg)](.github/workflows/zap.yml) 
+ [![ubuntu status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/ubuntu/badge.svg)](.github/workflows/ubuntu.yml)  [![zap status](https://github.com/johnmorrisQADeveloper/013_vue_vuex_mongo_express/workflows/zap/badge.svg)](.github/workflows/zap.yml) 
 
 
 ## Start REST API
