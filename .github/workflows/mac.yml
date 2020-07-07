@@ -5,9 +5,7 @@ jobs:
     runs-on: macOS-latest
     steps:
     - uses: actions/checkout@v1
-    - name: Docker version
-      run: docker --version        
-
+      
     - name: Install brew
       run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
     - name: Install Cask
@@ -19,7 +17,9 @@ jobs:
       run: docker-machine create --driver "virtualbox" myBoxName
     - name: start the docker machine
       run: docker-machine start myBoxName
-
+    - name: Docker version
+      run: docker --version  
+      
     - name: docker commands
       run: eval "$(docker-machine env myBoxName)"
     - name: Build the docker-compose stack
