@@ -1,4 +1,8 @@
 {
   "rootDir": ".",
-  "projectRoot": "."
+  "projectRoot": ".",
+  "firefoxGcInterval": {
+    "runMode": null,
+    "openMode": null
+  }
 }
