@@ -63,9 +63,8 @@ router.delete('/:todoId', async (req, res) => {
 router.patch('/:todoId', async (req, res) => {
   console.log(req.params.todoId)
   try {
-    const { _id, title, completed, __v } = req.body
-    const vidoes = await Todo.updateOne({ _id: req.params.todoId },
-      { $set: { _id, title, completed, __v } })
+    const {_id, title, completed} = req.body
+    const vidoes = await Todo.updateOne({ _id: req.params.todoId }, { title, completed })
     res.json(vidoes)
   } catch (error) {
     res.json(error)
