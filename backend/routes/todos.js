@@ -59,6 +59,17 @@ router.delete('/:todoId', async (req, res) => {
   }
 })
 
+// delete all Todos
+router.delete('/del/deleteAll', async (req, res) => {
+  console.log(req.params.todoId)
+  try {
+    const todo =  await Todo.collection.drop()
+    res.json(`Todo collected deleted ${todo}`)
+  } catch (error) {
+    res.json(error)
+  }
+})
+
 // update a record
 router.patch('/:todoId', async (req, res) => {
   console.log(req.params.todoId)
