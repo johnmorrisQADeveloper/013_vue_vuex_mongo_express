@@ -10,6 +10,10 @@ const getters = {
 }
 
 const actions = {
+  async removeALlTodos ({ commit }) {
+    await axios.delete('http://localhost:3000/todos/del/deleteAll')
+    commit('REMOVE_ALL_TODOS')
+  },
   async fetchTodos ({ commit }) {
     const response = await axios.get('http://localhost:3000/todos')
     commit('SET_TODOS', response.data)
@@ -24,6 +28,7 @@ const actions = {
     await axios.delete(`http://localhost:3000/todos/${_id}`)
     commit('REMOVE_TODO', _id)
   },
+
   async filterTodo ({ commit }, number) {
     const response = await axios.get(`http://localhost:3000/todos/count/${number}`)
     commit('SET_TODOS', response.data)
@@ -38,6 +43,7 @@ const actions = {
 }
 
 const mutations = {
+  REMOVE_ALL_TODOS: (state) => (state.todo = []),
   SET_TODOS: (state, todos) => (state.todos = todos),
   NEW_TODO: (state, todo) => state.todos.unshift(todo),
   REMOVE_TODO: (state, _id) => (state.todos = state.todos.filter(todo => todo._id !== _id)),

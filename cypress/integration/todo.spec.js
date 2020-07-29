@@ -3,13 +3,13 @@
 import {homePage} from './pageObject/homePage'
 describe('Todo Homepage ', () => {
   it('title home page is todovuex', () => {
-    homePage.navigate()
-    homePage.title().should('be', 'todovuex')
+    cy.visit('http://localhost:8080/')
+    cy.title().should('be', 'todovuex')
   })
   it('add new item', () => {
-    homePage.newItemButton().click()
-    homePage.dialogTitle().should('be', 'New Item')
-    homePage.inputBox().type('hello')
-    homePage.saveButton().click()
+    cy.get('.mb-2 > .v-btn__content').click()
+    cy.get('.headline').should('have.text', 'New Item')
+    cy.get('.inputTodo', {timeout: 10000}).type('hello')
+    cy.get('button:nth-child(3) > span').click()
   })
 })
