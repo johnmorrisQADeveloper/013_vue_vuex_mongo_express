@@ -1,8 +1,8 @@
 {
-  "rootDir": ".",
-  "projectRoot": ".",
-  "firefoxGcInterval": {
-    "runMode": null,
-    "openMode": null
-  }
+  "pluginsFile": "tests/plugins/index.js",
+  "supportFile": "tests/support/index.js",
+  "integrationFolder": "tests/e2e",
+  "testFiles": "**/*.spec.js*",
+  "experimentalComponentTesting": true,
+  "componentFolder": "tests/components"
 }
