@@ -13,11 +13,14 @@
 cd backend
 npm i
 npm start
+http://localhost:3000/todos
+https://cryptic-sierra-47326.herokuapp.com/todos
 ```
 
 ## Start Vue APP
 ```
 npm run serve
+http://localhost:8080/
 ```
 
 ## start docker 
